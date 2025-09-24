@@ -7,6 +7,7 @@ import { SecondTask } from "./task2";
 import { useOnlineStatus } from "./task3/useOnlineStatus";
 import { uselocalStorage } from "./task4/useLocalStorage";
 import { FifthTask } from "./task5";
+import { SixthTask } from "./task6";
 
 function App() {
   // ------------ Task 3 ------------
@@ -48,6 +49,8 @@ function App() {
       </Profiler>
       {/* Task 5 */}
       <FifthTask />
+      {/* Task 6 */}
+      <SixthTask />
     </div>
   );
 }
