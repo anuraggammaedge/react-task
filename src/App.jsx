@@ -8,6 +8,8 @@ import { useOnlineStatus } from "./task3/useOnlineStatus";
 import { uselocalStorage } from "./task4/useLocalStorage";
 import { FifthTask } from "./task5";
 import { SixthTask } from "./task6";
+import { SeventhTask } from "./task7";
+import { EightTask } from "./task8";
 
 function App() {
   // ------------ Task 3 ------------
@@ -51,6 +53,10 @@ function App() {
       <FifthTask />
       {/* Task 6 */}
       <SixthTask />
+      {/* Task 7 */}
+      <SeventhTask />
+      {/* Task 8 */}
+      <EightTask />
     </div>
   );
 }

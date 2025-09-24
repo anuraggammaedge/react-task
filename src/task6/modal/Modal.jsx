@@ -6,7 +6,7 @@ export const Modal = ({ children, open, handleClose, className }) => {
   return (
     <ModalContext.Provider value={{ open, handleClose }}>
       {open && (
-        <div className="fixed bg-gray-400/40 w-full h-full left-0 right-0 top-0 bottom-0 flex justify-center items-center">
+        <div className="z-50 fixed bg-gray-400/40 w-full h-full left-0 right-0 top-0 bottom-0 flex justify-center items-center">
           <div
             className={`${className} relative z-50 p-2  max-w-2xl max-h-full bg-white shadow-2xl rounded-xl`}
           >
