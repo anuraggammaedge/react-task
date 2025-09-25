@@ -26,9 +26,12 @@ export const Cart = ({
                   <div className="font-semibold text-md py-2">Quantity : </div>
                   <div className="flex flex-row gap-3 items-center">
                     <button
-                      disabled={p.quantity === 1}
-                      onClick={() => dispatch(decrement(p.productId))}
-                      className="disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed pb-1 w-8 h-8 rounded-xl flex items-center justify-center font-bold border border-gray-400 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+                      onClick={
+                        p.quantity === 1
+                          ? () => dispatch(removeItemFromCart(p.productId))
+                          : () => dispatch(decrement(p.productId))
+                      }
+                      className=" pb-1 w-8 h-8 rounded-xl flex items-center justify-center font-bold border border-gray-400 bg-gray-300 hover:bg-gray-400 cursor-pointer"
                     >
                       -
                     </button>

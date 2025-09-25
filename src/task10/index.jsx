@@ -10,7 +10,8 @@ import { productData } from "./data.js";
 import { Cart } from "./components/Cart.jsx";
 
 const Tenthtask = () => {
-  const cart = useSelector((state) => state.cart);
+  let cart = useSelector((state) => state.cart);
+
   return (
     <div>
       <Products

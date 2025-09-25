@@ -10,30 +10,35 @@ import { EightTask } from "./task8/index.jsx";
 import { store } from "./store.js";
 import { Provider } from "react-redux";
 import Tenthtask from "./task10/index.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const TaskSecondPage = lazy(() => import("./task2/index.jsx"));
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route
-            path="task2"
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <TaskSecondPage />
-              </Suspense>
-            }
-          />
-          <Route path="task5" element={<FifthTask />} />
-          <Route path="task6" element={<SixthTask />} />
-          <Route path="task7" element={<SeventhTask />} />
-          <Route path="task8" element={<EightTask />} />
-          <Route path="cart" element={<Tenthtask />} />
-        </Routes>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route
+              path="task2"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <TaskSecondPage />
+                </Suspense>
+              }
+            />
+            <Route path="task5" element={<FifthTask />} />
+            <Route path="task6" element={<SixthTask />} />
+            <Route path="task7" element={<SeventhTask />} />
+            <Route path="task8" element={<EightTask />} />
+            <Route path="cart" element={<Tenthtask />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
     </Provider>
   </StrictMode>
 );
