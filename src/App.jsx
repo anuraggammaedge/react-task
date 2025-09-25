@@ -1,62 +1,40 @@
-import { Profiler, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Outlet } from "react-router";
 import "./App.css";
 import { FirstTask } from "./task1";
-import { SecondTask } from "./task2";
 import { useOnlineStatus } from "./task3/useOnlineStatus";
 import { uselocalStorage } from "./task4/useLocalStorage";
-import { FifthTask } from "./task5";
-import { SixthTask } from "./task6";
-import { SeventhTask } from "./task7";
-import { EightTask } from "./task8";
+import Tenthtask from "./task10";
 
 function App() {
   // ------------ Task 3 ------------
   const isUserOnline = useOnlineStatus();
 
   // -------- Task 4 --------
-  const [setItem, getItem] = uselocalStorage("keyls");
-  const [setLs, getLs] = uselocalStorage("anurag");
+  const [setItem, getItem] = uselocalStorage("localStorageKey");
+  const [setLs, getLs] = uselocalStorage("keyLs");
 
-  setItem("asdf asdf");
-  setLs("asdf asdf from second");
+  setItem("Data Saved in local storage");
+  setLs("trying use hook two times in same file");
   const a = getLs();
   console.log(a);
   // ------- task 4 end ----------
-
-  function onRender(id, phase, actualDuration, baseDuration, startTime) {
-    console.log(
-      `id : ${id}, phase : ${phase}, startTime : ${actualDuration}, baseDuration : ${baseDuration}, actualDuration : ${startTime}`
-    );
-  }
 
   return (
     <div>
       {/* Task 3 */}
       {isUserOnline ? (
         <div className="m-2 rounded-xl w-fit text-lg font-semibold p-1 text-green-500 border border-green-300 shadow-2xs">
-          Online
+          User Online
         </div>
       ) : (
         <div className="m-2 rounded-xl w-fit text-lg font-semibold p-1 text-red-500 border border-red-300 shadow-2xs">
-          Offline
+          User Offline
         </div>
       )}
       {/* Task 1 */}
       <FirstTask />
-      {/* Task 2 */}
-      <Profiler id="task2" onRender={onRender}>
-        <SecondTask />
-      </Profiler>
-      {/* Task 5 */}
-      <FifthTask />
-      {/* Task 6 */}
-      <SixthTask />
-      {/* Task 7 */}
-      <SeventhTask />
-      {/* Task 8 */}
-      <EightTask />
+
+      <Outlet />
     </div>
   );
 }
