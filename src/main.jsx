@@ -11,6 +11,7 @@ import { store } from "./store.js";
 import { Provider } from "react-redux";
 import Tenthtask from "./task10/index.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TwelfthTask } from "./task12/index.jsx";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="task7" element={<SeventhTask />} />
             <Route path="task8" element={<EightTask />} />
             <Route path="cart" element={<Tenthtask />} />
+            <Route path="trello" element={<TwelfthTask />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
