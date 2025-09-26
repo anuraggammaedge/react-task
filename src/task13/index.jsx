@@ -106,7 +106,7 @@ export default function FormTesting() {
             <div className="flex items-center mt-4">
               <button
                 type="submit"
-                className="w-full text-white bg-blue-700 hover:bg-blue-600 focus:ring-1 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center mt-2 disabled:bg-gradient-to-br disabled:from-gray-100 disabled:to-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed group-invalid:bg-gradient-to-br group-invalid:from-gray-100 group-invalid:to-gray-300 group-invalid:text-gray-400 group-invalid:pointer-events-none group-invalid:opacity-70"
+                className="w-full text-white bg-blue-700 hover:bg-blue-600 focus:ring-1 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center mt-2"
               >
                 Create account
               </button>

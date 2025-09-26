@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 import Tenthtask from "./task10/index.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TwelfthTask } from "./task12/index.jsx";
-import { FormTesting } from "./task13/index.jsx";
+import FormTesting from "./task13/index.jsx";
 
 const queryClient = new QueryClient();
 
