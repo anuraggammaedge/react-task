@@ -37,4 +37,17 @@ export const useTrelloBoard = create((set) => ({
         task.id === id ? { ...task, status: newStatus } : task
       ),
     })),
+
+  addTask: (title, description) =>
+    set((state) => ({
+      tasks: [
+        ...state.tasks,
+        {
+          id: Date.now(),
+          title: title,
+          description: description,
+          status: "To Do",
+        },
+      ],
+    })),
 }));
