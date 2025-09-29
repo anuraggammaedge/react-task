@@ -5,6 +5,7 @@ import { useOnlineStatus } from "./task3/useOnlineStatus";
 import { uselocalStorage } from "./task4/useLocalStorage";
 import Tenthtask from "./task10";
 import { EleventhTask } from "./task11";
+import { HooksTesting } from "./hooks";
 
 function App() {
   // ------------ Task 3 ------------
@@ -35,6 +36,7 @@ function App() {
       {/* Task 1 */}
       <FirstTask />
       <EleventhTask />
+      <HooksTesting />
 
       <Outlet />
     </div>
